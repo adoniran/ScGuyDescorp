@@ -7,11 +7,9 @@ package Gerentes;
 
 import EJB.UsuarioLocal;
 import Entidades.Conta;
-import Entidades.Endereco;
 import Entidades.Usuario;
 import javax.ejb.EJB;
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -28,6 +26,7 @@ public class UsuarioManagedBean {
     private Usuario usuario= new Usuario();
     String cel1,cel2;
     private Conta conta=new Conta();
+    String login,senha;
 //    private Endereco endereco=new Endereco();
     
     @EJB
@@ -70,6 +69,24 @@ public class UsuarioManagedBean {
         this.conta = conta;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    public void loginUser(){
+        addMessage("Bem vindo:"+login);
+    }
     public void buttonAction(ActionEvent actionEvent) {
         salvarUsuario();
         addMessage("Usuario cadastrado com sucesso");
@@ -82,9 +99,9 @@ public class UsuarioManagedBean {
     public void salvarUsuario(){
         
 //    usuario.setEndereco(endereco);
-    usuario.addTelefone(cel1);
-   usuario.addTelefone(cel2);
-      bean.criar(this.usuario);    
+        usuario.addTelefone(cel1);
+        usuario.addTelefone(cel2);
+        bean.criar(this.usuario);          
     }
     
 }
