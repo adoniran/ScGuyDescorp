@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core">
+                    
+    
+    <ui:define name="corpo">
+        
+        <h:panelGrid columns="4" cellpadding="10">
+	                <p:outputLabel value="Nome do projeto:"/>
+                        <p:inputText value="#{projetoManaged.projeto.nome}" size="55" placeholder="Ex:Guy tech " />
+	                <p:outputLabel value="Descricao:"/>
+                        <p:inputTextarea rows="6" cols="33" value="#{projetoManaged.projeto.descricao}" placeholder="Descreva aqui o que é seu projeto e o que faz?"/>
+	               
+                        <p:outputLabel value="Área do projeto:"/>
+                        <p:selectOneMenu value="#{projetoManaged.area}" filter="true">
+                                        <f:selectItem itemValue="Ciencia" itemLabel="Ciencia"/>
+                                        <f:selectItem itemValue="TI" itemLabel="TI"/>
+                                        <f:selectItem itemValue="COMUNICACAO" itemLabel="Comunicação"/>
+	                		<f:selectItem itemValue="STARTUP" itemLabel="Start Up"/>
+	                		<f:selectItem itemValue="HARDWARE" itemLabel="Hardware"/>
+	                		
+	               </p:selectOneMenu>
+                        
+                        <p:outputLabel value="Login:"/>
+                        <p:inputText value="#{projetoManaged.projeto.necessidade}" size="55" placeholder="Ex:guy74"/>
+	               
+	                <p:outputLabel value="Tipo de necessidade"/>
+                        <p:selectOneMenu value="#{projetoManaged.nec}" filter="true">
+                                        <f:selectItem itemValue="Nenhum" itemLabel="Nenhum"/>
+                                        <f:selectItem itemValue="Intelectual" itemLabel="Selecione uma mídia"/>
+	                		<f:selectItem itemValue="Humano" itemLabel="Indicação de amigos"/>
+	                		<f:selectItem itemValue="Financeiro" itemLabel="Internet"/>
+	                		
+	               </p:selectOneMenu>
+                         <p:outputLabel value="Descricao de necessidade:"/>
+                        <p:inputTextarea rows="6" cols="33" value="#{projetoManaged.projeto.motivacaoNecessidade}" placeholder="Descreva o motivo de sua necessidade"/>
+		               
+                        <p:commandButton value="Salvar" actionListener="#{projetoManaged.salvarProj}" ajax="false"/>	        
+				        
+	            </h:panelGrid>
+        
+        
+        
+        
+        
+    </ui:define>
+</ui:composition>

@@ -34,7 +34,7 @@ public class Endereco implements Serializable {
     @Size(max = 150)
     @Column(name = "bairro")
     private String bairro;
-    @NotNull
+    
     @Min(1)
     @Max(99999)
     @Column(name = "numero")

@@ -13,6 +13,9 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 
 
 /**
@@ -25,7 +28,7 @@ public class UsuarioManagedBean {
     private Usuario usuario= new Usuario();
     String cel1,cel2;
     private Conta conta=new Conta();
-    private Endereco endereco=new Endereco();
+//    private Endereco endereco=new Endereco();
     
     @EJB
     UsuarioLocal bean;
@@ -67,19 +70,17 @@ public class UsuarioManagedBean {
         this.conta = conta;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
+    public void buttonAction(ActionEvent actionEvent) {
+        salvarUsuario();
+        addMessage("Usuario cadastrado com sucesso");
     }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+     
+    public void addMessage(String summary) {
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary,  null);
+        FacesContext.getCurrentInstance().addMessage(null, message);
     }
-   
     public void salvarUsuario(){
-//        conta.setAgencia("12345");
-//        conta.setNumero("448576655");
-//        conta.setTipo("POUPANÇA");
-//        conta.setDonoConta(usuario);
+        
 //    usuario.setEndereco(endereco);
     usuario.addTelefone(cel1);
    usuario.addTelefone(cel2);

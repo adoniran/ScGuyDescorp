@@ -125,7 +125,6 @@ public class Projetos implements Serializable {
     public List<Usuario> getParticipantes() {
         return participantes;
     
-        
 }
 
     public String getMotivacaoNecessidade() {

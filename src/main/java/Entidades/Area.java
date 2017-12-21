@@ -10,5 +10,5 @@ package Entidades;
  * @author adoniran
  */
 public enum Area {
-    TI,COMUNICACAO,STARTUP,HARDWARE;
+    TI,COMUNICACAO,STARTUP,HARDWARE,CIENCIA;
 }
