@@ -56,7 +56,7 @@ public class Projetos implements Serializable {
     private Long id;
     @NotBlank
     @Size(max=30, message="Apenas {max} são permitidos")
-    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "Primeira letra Do nome do Seu projeto Deve ser maiuscula")
+    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}", message = "Primeira letra Do nome do Seu projeto Deve ser maiuscula")
     @Column(name="nome_project")
     private String nome;
     @NotBlank

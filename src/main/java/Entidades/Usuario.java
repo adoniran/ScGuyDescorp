@@ -66,7 +66,7 @@ public class Usuario implements Serializable {
     private String login;
     @NotBlank
     @Size(max = 30)
-    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "Primeira letra deve ser maiuscula seguida de letras menusculas exemplo:Pedro")
+    @Pattern(regexp = "\\p{Alpha}", message = "Apenas letras entre (a-Z) são permitidas nesse campo")
     @Column(name = "nome")
     private String nome;
     @NotNull

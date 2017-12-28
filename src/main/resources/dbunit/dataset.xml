@@ -12,36 +12,43 @@ and open the template in the editor.
     
     
     <tb_usuario Discriminator_user="U" login="harry69" nome="Harry thiago Potter" email="harryPoter@gmail.com" 
-                senha="grifno" logadouro="Rua dos Alfineiros" numero="4" bairro="smallvile" complemento="casa" 
-                cidade="london" estado="AC" CEP="53300-030"/>
+                senha="grifno"/>
+<!--                logadouro="Rua dos Alfineiros" numero="4" bairro="smallvile" complemento="casa" 
+                cidade="london" estado="AC" CEP="53300-030"/>-->
     
     <tb_usuario Discriminator_user="U" login="Hermione" nome="Hermione granger" email="hermione@gmail.com" 
-                senha="alohomora" logadouro="Rua dos trouxas" numero="4" bairro="Camp half-blod" complemento="ap 204" 
+                senha="alohomora" />
+<!--                logadouro="Rua dos trouxas" numero="4" bairro="Camp half-blod" complemento="ap 204" 
                 cidade="london" estado="AM" CEP="56600-030"/>
-    
+    -->
     <tb_usuario Discriminator_user="U" login="RonX66" nome="Ron Weasley" email="Wesaley.ron@gmail.com" 
-                senha="Grifnoria.00" logadouro="AV john Ceeena" numero="4" bairro="smallvile" complemento="casa" 
-                cidade="london" estado="AC" CEP="53300-030"/>
+                senha="Grifnoria.00" />
+<!--                logadouro="AV john Ceeena" numero="4" bairro="smallvile" complemento="casa" 
+                cidade="london" estado="AC" CEP="53300-030"/>-->
     
     <tb_usuario Discriminator_user="U" login="percy" nome="Percy Jackson" email="Percyr@gmail.com" 
-                senha="Tsuname.69" logadouro="AV maui" numero="4" bairro="gothan" complemento="casa" 
-                cidade="athenas" estado="MG" CEP="53620-030"/>
+                senha="Tsuname.69" />
+<!--                logadouro="AV maui" numero="4" bairro="gothan" complemento="casa" 
+                cidade="athenas" estado="MG" CEP="53620-030"-->
     <!--administradores-->
     <tb_usuario Discriminator_user="A" login="BlackCat" nome="Minerva Mcgonagall" email="mcgonagall@gmail.com" 
-                senha="Blackcat71*" logadouro="AV black bird" numero="71" bairro="blair" complemento="ap 106" 
-                cidade="macao" estado="PE" CEP="53300-900"/>
+                senha="Blackcat71*"/>
+<!--                logadouro="AV black bird" numero="71" bairro="blair" complemento="ap 106" 
+                cidade="macao" estado="PE" CEP="53300-900"/>-->
     
     <tb_usuario Discriminator_user="A" login="QuironZ" nome="Quiron" email="demigod@gmail.com" 
-                senha="zeus" logadouro="Rua dos centauros" numero="4" bairro="Camp half-blod" complemento="casa" 
-                cidade="macao" estado="PE" CEP="56600-030"/>
+                senha="zeus"/>
+<!-- logadouro="Rua dos centauros" numero="4" bairro="Camp half-blod" complemento="casa" 
+                cidade="macao" estado="PE" CEP="56600-030"/>-->
     
     <tb_usuario Discriminator_user="A" login="adoniran" nome="adoniran" email="adonirandamasio@gmail.com" 
-                senha="ragnarok" logadouro="Rua dos bobos" numero="0" bairro="neverland" complemento="casa" 
-                cidade="fantasia" estado="PE" CEP="56600-030"/>
+                senha="ragnarok" />
+<!--logadouro="Rua dos bobos" numero="0" bairro="neverland" complemento="casa"--> 
+                <!--cidade="fantasia" estado="PE" CEP="56600-030"/>-->
     
     
     <tb_admins Usuario_ID="5" senha_confirmacao="202020"/>
-    <tb_admins Usuario_ID="6" senha_confirmacao="900025"/>
+    <tb_admins Usuario_ID="6" senha_confirmacao="90aa25"/>
     <tb_admins Usuario_ID="7" senha_confirmacao="303030"/>
     <!--    telefones-->
     <tb_telefone id="1" numero_telefone="(81)3426-0011"/>
@@ -62,8 +69,8 @@ and open the template in the editor.
     <tb_conta numero_conta="165799658" agencia_conta="4311"  tipo_conta="POUPANÇA" id_usuario="2"/>
     <tb_conta numero_conta="148994808" agencia_conta="5192"  tipo_conta="CONTA SALARIO" id_usuario="3"/>
     <tb_conta numero_conta="148999658" agencia_conta="5282"  tipo_conta="CONTA CORRENTE" id_usuario="4"/>
-    <tb_conta numero_conta="784599658" agencia_conta="4371"  tipo_conta="POUPANÇA" id_usuario="5"/>
-    <tb_conta numero_conta="000748558" agencia_conta="4371"  tipo_conta="CONTA CORRENTE" id_usuario="6"/>
+    <tb_conta numero_conta="784599658" agencia_conta="43712"  tipo_conta="POUPANÇA" id_usuario="5"/>
+    <tb_conta numero_conta="123456789" agencia_conta="4371"  tipo_conta="CONTA CORRENTE" id_usuario="6"/>
     <tb_conta numero_conta="000459858" agencia_conta="5192"  tipo_conta="POUPANÇA" id_usuario="7"/>
     <!--projetos-->
     <tb_projetos  nome_project="Aparato magico n15" descricao_project="desenvolver nova tecnologia para
