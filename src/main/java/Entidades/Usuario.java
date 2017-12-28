@@ -66,7 +66,7 @@ public class Usuario implements Serializable {
     private String login;
     @NotBlank
     @Size(max = 30)
-    @Pattern(regexp = "\\p{Alpha}", message = "Apenas letras entre (a-Z) são permitidas nesse campo")
+//    @Pattern(regexp = "(?=.*\\p{Alpha}", message = "Apenas letras entre (a-Z) são permitidas nesse campo")
     @Column(name = "nome")
     private String nome;
     @NotNull

@@ -48,7 +48,7 @@ and open the template in the editor.
     
     
     <tb_admins Usuario_ID="5" senha_confirmacao="202020"/>
-    <tb_admins Usuario_ID="6" senha_confirmacao="90aa25"/>
+    <tb_admins Usuario_ID="6" senha_confirmacao="900025"/>
     <tb_admins Usuario_ID="7" senha_confirmacao="303030"/>
     <!--    telefones-->
     <tb_telefone id="1" numero_telefone="(81)3426-0011"/>
@@ -69,8 +69,8 @@ and open the template in the editor.
     <tb_conta numero_conta="165799658" agencia_conta="4311"  tipo_conta="POUPANÇA" id_usuario="2"/>
     <tb_conta numero_conta="148994808" agencia_conta="5192"  tipo_conta="CONTA SALARIO" id_usuario="3"/>
     <tb_conta numero_conta="148999658" agencia_conta="5282"  tipo_conta="CONTA CORRENTE" id_usuario="4"/>
-    <tb_conta numero_conta="784599658" agencia_conta="43712"  tipo_conta="POUPANÇA" id_usuario="5"/>
-    <tb_conta numero_conta="123456789" agencia_conta="4371"  tipo_conta="CONTA CORRENTE" id_usuario="6"/>
+    <tb_conta numero_conta="784599658" agencia_conta="4371"  tipo_conta="POUPANÇA" id_usuario="5"/>
+    <tb_conta numero_conta="000748558" agencia_conta="4371"  tipo_conta="CONTA CORRENTE" id_usuario="6"/>
     <tb_conta numero_conta="000459858" agencia_conta="5192"  tipo_conta="POUPANÇA" id_usuario="7"/>
     <!--projetos-->
     <tb_projetos  nome_project="Aparato magico n15" descricao_project="desenvolver nova tecnologia para
@@ -103,7 +103,7 @@ and open the template in the editor.
     <tb_admins_tb_log tb_admins_Usuario_ID="5" log_id="1"/>
     <tb_admins_tb_log tb_admins_Usuario_ID="5" log_id="2"/>
     <tb_admins_tb_log tb_admins_Usuario_ID="6" log_id="3"/>
-    <tb_admins_tb_log tb_admins_Usuario_ID="6" log_id="4"/>
+<tb_admins_tb_log tb_admins_Usuario_ID="6" log_id="4"/>
     
     
     <!--mensagem-->

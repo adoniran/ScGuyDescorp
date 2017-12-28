@@ -42,7 +42,7 @@ import org.hibernate.validator.constraints.NotBlank;
         {
             @NamedNativeQuery(
                     name = "PROJETO.PorNome",
-                    query = "SELECT id, nome_project, motivacao_necessidade, necessidade, situacao, area_projeto FROM tb_projetos WHERE nome_project = ?1",
+                    query = "SELECT id, nome_project, motivacao_necessidade, necessidade, situacao, area_projeto FROM tb_projetos WHERE nome_project like ?",
                     resultClass = Projetos.class
             )
         }
@@ -56,7 +56,7 @@ public class Projetos implements Serializable {
     private Long id;
     @NotBlank
     @Size(max=30, message="Apenas {max} são permitidos")
-    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}", message = "Primeira letra Do nome do Seu projeto Deve ser maiuscula")
+//    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "Primeira letra Do nome do Seu projeto Deve ser maiuscula")
     @Column(name="nome_project")
     private String nome;
     @NotBlank

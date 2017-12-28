@@ -36,8 +36,8 @@ public class ProjetosBean extends Crud<Projetos> implements ProjetosLocal {
     @Override
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)    
     public Projetos findByName(String name) {
-        TypedQuery<Projetos> query =getGerente().createNamedQuery("PROJETO.PorNome",Projetos.class);
-        query.setParameter(1, name);
+        TypedQuery<Projetos> query =getGerente().createQuery("SELECT p from Projetos p where p.nome =:nome",Projetos.class);
+        query.setParameter("nome", name);
         Projetos p = query.getSingleResult();        
         return p;
        

@@ -50,7 +50,7 @@ public class DbUnitUtil {
                 if (conn != null) {
                     conn.close();
                 }
-
+                
                 if (db_conn != null) {
                     db_conn.close();
                 }
