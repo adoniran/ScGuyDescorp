@@ -17,7 +17,7 @@ import java.util.Set;
  *
  * @author adoniran
  */
-@Stateless
+@Stateless(name = "ejb/UsuarioBean")
 public class UsuarioBean extends Crud<Usuario> implements UsuarioLocal {
 
     public UsuarioBean() {
