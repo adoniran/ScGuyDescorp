@@ -99,6 +99,7 @@ public class EJBTeste {
         projeto.setDescricao("teste teste teste");
         projeto.setNecessidade(Necessidade.NENHUMA);
         projeto.setMotivacaoNecessidade("nehuma");
+        projeto.setSituacao(Situacao.PARADO);
         projetoLocal.criar(projeto);
         assertNotNull(projeto.getId());
         Projetos atualizado=projetoLocal.findByName("Oldname");
