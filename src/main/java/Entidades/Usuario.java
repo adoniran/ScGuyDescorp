@@ -5,6 +5,7 @@
  */
 package Entidades;
 
+import Acesso.Grupo;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,12 +22,14 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -90,9 +93,25 @@ public class Usuario implements Serializable {
 //    @Valid
     @OneToOne(mappedBy = "donoConta", cascade = CascadeType.ALL, orphanRemoval = true)
     private Conta conta;
-//    @Embedded
-//    @Valid
-//    private Endereco endereco;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "tb_usuario_grupo", joinColumns = {
+        @JoinColumn(name = "ID_USUARIO")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "ID_GRUPO")})
+    private List<Grupo> grupos;
+
+    public void adicionarGrupo(Grupo grupo) {
+        if (this.grupos == null) {
+            this.grupos = new ArrayList<>();
+        }
+
+        this.grupos.add(grupo);
+    }
+
+    public List<Grupo> getGrupos() {
+        return this.grupos;
+    }
 
     public Conta getConta() {
         return conta;
@@ -174,7 +193,6 @@ public class Usuario implements Serializable {
 //    public void setEndereco(Endereco endereco) {
 //        this.endereco = endereco;
 //    }
-
     @Override
     public int hashCode() {
         int hash = 0;

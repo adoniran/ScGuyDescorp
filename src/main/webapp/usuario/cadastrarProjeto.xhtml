@@ -4,13 +4,15 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
-                template="/WEB-INF/template.xhtml"
+                template="../WEB-INF/template.xhtml"
                 xmlns:f="http://java.sun.com/jsf/core">
                     
     
     <ui:define name="corpo">
          <h:form>
-        <h:panelGrid columns="4" cellpadding="10">
+                         <p:growl id="growl" life="5000" autoUpdate="true" showSummary="true" showDetail="true"/>
+
+        <h:panelGrid columns="4" cellpadding="20">
            
 	                <p:outputLabel for="nomeP"value="Nome do projeto:"/>
                         <p:inputText id="nomeP"value="#{projetoManaged.projeto.nome}" size="40" placeholder="Ex:Guy tech " />
@@ -41,7 +43,7 @@
                          <p:outputLabel for="descNe"value="Descricao de necessidade:"/>
                         <p:inputTextarea id="descNe"rows="6" cols="33" value="#{projetoManaged.projeto.motivacaoNecessidade}" placeholder="Descreva o motivo de sua necessidade"/>
 		               
-                        <p:commandButton value="Salvar" actionListener="#{projetoManaged.salvarProj}" ajax="false"/>	        
+                        <p:commandButton value="Salvar" actionListener="#{projetoManaged.salvarProj}" ajax="true" update="growl"/>	        
 				        
 	            </h:panelGrid>
         
