@@ -5,13 +5,16 @@
  */
 package EJB;
 
+import Entidades.Projetos;
 import Entidades.Usuario;
 import java.util.Iterator;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import java.util.Set;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -22,6 +25,13 @@ public class UsuarioBean extends Crud<Usuario> implements UsuarioLocal {
 
     public UsuarioBean() {
         super(Usuario.class);
+    }
+
+    @Override
+    public List<Projetos> findProjetosParticipantes(long idUsuario) {
+        Usuario user;
+        user = getGerente().find(Usuario.class, idUsuario);
+        return user.getProj();
     }
 
     @Override
@@ -41,5 +51,13 @@ public class UsuarioBean extends Crud<Usuario> implements UsuarioLocal {
             getGerente().persist(usuario);
 
         }
+    }
+
+    @Override
+    public Usuario findUserById(String name) {
+        TypedQuery<Usuario> query = getGerente().createQuery("SELECT p from Usuario p where p.login =:nome", Usuario.class);
+        query.setParameter("nome", name);
+        Usuario p = query.getSingleResult();
+        return p;
     }
 }

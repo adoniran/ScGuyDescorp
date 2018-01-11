@@ -6,6 +6,8 @@
 package EJB;
 
 import Entidades.Projetos;
+import Entidades.Usuario;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -23,5 +25,9 @@ public interface ProjetosLocal {
 
     Projetos find(Object id); 
     
-    Projetos findByName(String name);   
+    Projetos findByName(String name);
+    
+    List<Usuario> findParticipantes(Object idProjeto);
+    
+   
 }

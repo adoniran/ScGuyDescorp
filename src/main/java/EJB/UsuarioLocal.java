@@ -5,6 +5,7 @@
  */
 package EJB;
 
+import Entidades.Projetos;
 import Entidades.Usuario;
 import java.util.List;
 import javax.ejb.Local;
@@ -21,4 +22,8 @@ public interface UsuarioLocal {
     void editar(Usuario usuario);
 
     void remover(Usuario usuario);  
+    
+    List<Projetos> findProjetosParticipantes(long idUsuario);
+
+    public Usuario findUserById(String name);
 }

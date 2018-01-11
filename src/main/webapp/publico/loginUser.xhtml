@@ -13,10 +13,10 @@
         <p:growl id="growl" life="5000" autoUpdate="true" showSummary="true" showDetail="true"/>
              <h:panelGrid columns="4" cellpadding="10">
                  <p:outputLabel value="Login:"/>
-                 <p:inputText value="#{usuarioManagedBean.login}" size="40" />
+                 <p:inputText value="#{login.login}" size="40" />
                  <p:outputLabel value="Senha"/>
-                 <p:password value="#{usuarioManagedBean.senha}" size="40"/>
-                 <p:commandButton value="Login" actionListener="#{usuarioManagedBean.loginUser()}"  ajax="true" update="growl"/>
+                 <p:password value="#{login.senha}" size="40"/>
+                 <p:commandButton value="Login" actionListener="#{login.loginUser()}"  ajax="true" update="growl"/>
              </h:panelGrid>
       </h:form>
         

@@ -35,27 +35,26 @@
             publico/cadastrarCliente.xhtml
         </welcome-file>
     </welcome-file-list>
-    <!--Realm-->
-    
-    <!--    <security-constraint>
+    <!--    Realm
+    <security-constraint>
         <display-name>Pg Publicas</display-name>
         <web-resource-collection>
             <web-resource-name>Public Area</web-resource-name>
             <description>Public Area</description>
-            <url-pattern>/faces/publico/*</url-pattern>
+            <url-pattern>/publico/*</url-pattern>
             <http-method>GET</http-method>
-            <http-method>POST</http-method>
-            <http-method>HEAD</http-method>
             <http-method>PUT</http-method>
+            <http-method>HEAD</http-method>
+            <http-method>POST</http-method>
             <http-method>OPTIONS</http-method>
             <http-method>TRACE</http-method>
-            <http-method>DELETE</http-method>            
-        </web-resource-collection> 
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
         <user-data-constraint>
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-        </user-data-constraint>   
+        </user-data-constraint>
     </security-constraint>-->
-<!--    <security-constraint>
+    <security-constraint>
         <display-name>pg admin</display-name>
         <web-resource-collection>
             <web-resource-name>admins</web-resource-name>
@@ -72,6 +71,16 @@
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
     </security-constraint>
+    <!--
+-->
+    <security-constraint>
+        <display-name>pg Usuario</display-name>
+        <web-resource-collection>
+            <web-resource-name>restrito usr</web-resource-name>
+            <description/>
+            <url-pattern>/usuario/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
     <login-config>
         <auth-method>FORM</auth-method>
         <realm-name>file</realm-name>
@@ -87,5 +96,5 @@
     <security-role>
         <description>usr role</description>
         <role-name>Usuario</role-name>
-    </security-role>-->
+    </security-role>
 </web-app>

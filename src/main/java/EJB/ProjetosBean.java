@@ -6,6 +6,8 @@
 package EJB;
 
 import Entidades.Projetos;
+import Entidades.Usuario;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -42,5 +44,13 @@ public class ProjetosBean extends Crud<Projetos> implements ProjetosLocal {
         return p;
        
     }
+
+    @Override
+    public List<Usuario> findParticipantes(Object idProjeto) {
+       Projetos proj;
+       proj=getGerente().find(Projetos.class, idProjeto);
+       return proj.getParticipantes();
+    }
+
     
 }

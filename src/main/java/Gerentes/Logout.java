@@ -6,21 +6,19 @@
 package Gerentes;
 
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
-import java.io.Serializable;
+import javax.enterprise.context.Dependent;
 
 /**
  *
  * @author adoniran
  */
-@Named(value = "loginBean")
-@SessionScoped
-public class LoginBean implements Serializable {
+@Named(value = "logout")
+public class Logout {
 
     /**
-     * Creates a new instance of LoginBean
+     * Creates a new instance of Logout
      */
-    public LoginBean() {
+    public Logout() {
     }
     
 }

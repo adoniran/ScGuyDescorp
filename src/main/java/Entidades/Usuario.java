@@ -94,7 +94,7 @@ public class Usuario implements Serializable {
     @OneToOne(mappedBy = "donoConta", cascade = CascadeType.ALL, orphanRemoval = true)
     private Conta conta;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "tb_usuario_grupo", joinColumns = {
         @JoinColumn(name = "ID_USUARIO")},
             inverseJoinColumns = {

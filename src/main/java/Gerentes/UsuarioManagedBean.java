@@ -5,6 +5,7 @@
  */
 package Gerentes;
 
+import Acesso.Grupo;
 import EJB.UsuarioLocal;
 import Entidades.Conta;
 import Entidades.Usuario;
@@ -97,8 +98,9 @@ public class UsuarioManagedBean {
         FacesContext.getCurrentInstance().addMessage(null, message);
     }
     public void salvarUsuario(){
-        
-//    usuario.setEndereco(endereco);
+//        Grupo g = new Grupo();
+//        g.setNome(Grupo.USUARIO);
+//        usuario.adicionarGrupo(g);
         usuario.addTelefone(cel1);
         usuario.addTelefone(cel2);
         bean.criar(this.usuario);          
