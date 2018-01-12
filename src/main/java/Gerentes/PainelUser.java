@@ -6,22 +6,28 @@
 package Gerentes;
 
 import EJB.UsuarioLocal;
+import Entidades.Area;
+import Entidades.Necessidade;
 import Entidades.Projetos;
+import Entidades.Situacao;
 import Entidades.Usuario;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.security.DeclareRoles;
 import javax.ejb.EJB;
 
 /**
  *
  * @author adoniran
  */
+@DeclareRoles({"Usuario"})
 @Named(value = "painelUser")
 @SessionScoped
 public class PainelUser implements Serializable {
-    List<Projetos> participantes;
+    List<Projetos> participantes= new ArrayList<>();
     
     @EJB
     UsuarioLocal bean;
@@ -32,7 +38,15 @@ public class PainelUser implements Serializable {
     }
     
     public List<Projetos> getParticipantes() {
-        this.participantes=bean.findProjetosParticipantes(1);
+//        this.participantes=bean.findProjetosParticipantes(1);
+        Projetos projeto = new Projetos();
+        projeto.setNome("Estrela");
+        projeto.setArea(Area.TI);
+        projeto.setDescricao("Estrela da morte");
+        projeto.setNecessidade(Necessidade.FINANCEIRO);
+        projeto.setMotivacaoNecessidade("materiais");        
+        projeto.setSituacao(Situacao.PARADO);
+        participantes.add(projeto);
         return participantes;
     }
 
