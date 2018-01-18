@@ -73,9 +73,10 @@ public class Login implements Serializable {
             addMessage("Seja bem vindo:" + login);
             FacesContext.getCurrentInstance().getExternalContext().redirect("/ScienceGuy/usuario/usuario.xhtml");
             return "usuario";
-        } else {
-            return "loginUser";
-        }
+        } else if(request.isUserInRole("Administrador")) {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/ScienceGuy/admin/index.xhtml");
+            return "admin";
+        }else{return "loginUser";}
     }
 
     public String logout() throws IOException {

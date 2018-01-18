@@ -1,0 +1,23 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+	
+		<h:form>
+			<p:panelMenu style="width:250px">
+				<p:submenu label="MENU USUARIO ">
+                                    <p:menuitem value="Painel" icon="icon-user" url="index.xhtml"/>
+				</p:submenu>
+				
+				<p:submenu label="Actions">
+					<p:menuitem value="Apagar Projeto" url="cadastrarProjeto.xhtml" icon="icon-users" />
+					<p:menuitem value="Visualizar Log" url="cadastrarProjeto.xhtml" icon="icon-users" />
+                                        
+				</p:submenu>
+				
+			</p:panelMenu>	
+		</h:form>
+
+</ui:composition>

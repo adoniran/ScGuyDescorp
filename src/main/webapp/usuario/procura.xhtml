@@ -24,7 +24,9 @@
                         <f:facet name="header">
                             <h:outputText value="Projetos Encontrados"/>
                         </f:facet>
-                        <h:outputText value="#{item.nome}"/> <p:commandButton value="Join"></p:commandButton>                      
+                        <h:outputText value="#{item.nome}"/> 
+<!--                        <a href="usuario/paginaProjeto.xhtml?nomeP={item.nome}">Exx</a> -->
+                        <h:link value="usuario/paginaProjeto.xhtml?nomeP=#{item.nome}" outcome="exx" />
                     </h:column>                   
                 </h:dataTable>
             </h:panelGrid>

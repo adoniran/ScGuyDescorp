@@ -5,6 +5,7 @@
  */
 package Gerentes;
 
+import EJB.ProjetosLocal;
 import EJB.UsuarioLocal;
 import Entidades.Area;
 import Entidades.Necessidade;
@@ -30,7 +31,9 @@ public class PainelUser implements Serializable {
     List<Projetos> participantes= new ArrayList<>();
     
     @EJB
-    UsuarioLocal bean;
+    ProjetosLocal bean;
+    @EJB
+    UsuarioLocal bean2;
     /**
      * Creates a new instance of PainelUser
      */
@@ -38,7 +41,7 @@ public class PainelUser implements Serializable {
     }
     
     public List<Projetos> getParticipantes() {
-//        this.participantes=bean.findProjetosParticipantes(1);
+//        this.participantes=bean2.findProjetosParticipantes(1);
         Projetos projeto = new Projetos();
         projeto.setNome("Estrela");
         projeto.setArea(Area.TI);

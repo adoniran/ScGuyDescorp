@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="../usuario/TemplateUser.xhtml"
+                
+                xmlns:f="http://java.sun.com/jsf/core">
+<!--               xmlns:f="http://xmlns.jcp.org/jsf/core" template="TemplateUser.xhtml"-->
+                
+                    
+    
+    <ui:define name="corpo">
+         <title>Painel pessoal</title>
+         <h5>Bem vindo : #{login.login}</h5>
+          <h:form>
+            <p:growl id="growl" life="5000" autoUpdate="true" showSummary="true" showDetail="true"/>
+            <h:panelGrid columns="4" cellpadding="10">
+            <p:commandButton value="Logout" actionListener="#{login.logout()}" ajax="true" update="growl"/>
+            </h:panelGrid>
+          </h:form>
+         <h:dataTable value="#{painelUser.participantes}" var="item">
+                    <h:column>
+                      <f:facet name="header">
+                        <h:outputText value="Projetos participantes"/>
+                      </f:facet>
+                        <h:outputText value="#{item.nome}"/>                       
+                    </h:column>                   
+        </h:dataTable>
+        
+    </ui:define>
+</ui:composition>

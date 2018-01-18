@@ -32,7 +32,7 @@
     </mime-mapping>
     <welcome-file-list>
         <welcome-file>
-            publico/cadastrarCliente.xhtml
+            publico/index.xhtml
         </welcome-file>
     </welcome-file-list>
     <!--    Realm
