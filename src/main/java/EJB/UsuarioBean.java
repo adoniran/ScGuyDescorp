@@ -14,12 +14,16 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import java.util.Set;
+import javax.annotation.security.DeclareRoles;
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.persistence.TypedQuery;
 
 /**
  *
  * @author adoniran
  */
+@DeclareRoles({"Usuario", "Administrador"})
 @Stateless(name = "ejb/UsuarioBean")
 public class UsuarioBean extends Crud<Usuario> implements UsuarioLocal {
 
@@ -27,6 +31,7 @@ public class UsuarioBean extends Crud<Usuario> implements UsuarioLocal {
         super(Usuario.class);
     }
 
+    @RolesAllowed({"Usuario", "Administrador"})
     @Override
     public List<Projetos> findProjetosParticipantes(long idUsuario) {
         Usuario user;
@@ -34,6 +39,7 @@ public class UsuarioBean extends Crud<Usuario> implements UsuarioLocal {
         return user.getProj();
     }
 
+    @PermitAll
     @Override
     public void criar(Usuario usuario) {
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
@@ -53,6 +59,7 @@ public class UsuarioBean extends Crud<Usuario> implements UsuarioLocal {
         }
     }
 
+    @RolesAllowed({"Usuario", "Administrador"})
     @Override
     public Usuario findUserById(String name) {
         TypedQuery<Usuario> query = getGerente().createQuery("SELECT p from Usuario p where p.login =:nome", Usuario.class);

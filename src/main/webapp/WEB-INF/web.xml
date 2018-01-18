@@ -63,7 +63,6 @@
         </web-resource-collection>
         <auth-constraint>
             <description>paginas admin</description>
-            <role-name>Usuario</role-name>
             <role-name>Administrador</role-name>
         </auth-constraint>
         <user-data-constraint>
@@ -80,6 +79,11 @@
             <description/>
             <url-pattern>/usuario/*</url-pattern>
         </web-resource-collection>
+        <auth-constraint>
+            <description>pg user</description>
+            <role-name>Usuario</role-name>
+            <role-name>Administrador</role-name>
+        </auth-constraint>
     </security-constraint>
     <login-config>
         <auth-method>FORM</auth-method>

@@ -10,12 +10,12 @@
 
     <ui:define name="corpo">
         <h:form>
-<!--            <p:growl id="growl" life="5000" autoUpdate="true" showSummary="true" showDetail="true"/>-->
-            <h:panelGrid columns="2" cellpadding="20">
+            <p:growl id="growl" life="5000" autoUpdate="true" showSummary="true" showDetail="true"/>
+            <h:panelGrid columns="2" >
                 <p:outputLabel value="Nome do projeto:"/>
                         <p:inputText value="#{projetoManaged.projeto.nome}" size="55" placeholder="Ex:Guy tech " />
 	                <p:outputLabel value="Descricao:"/>
-                        <p:inputTextarea rows="6" cols="33" value="#{projetoManaged.projeto.descricao}" placeholder="Descreva aqui o que é seu projeto e o que faz?"/>
+                        <p:inputTextarea rows="6" cols="20" value="#{projetoManaged.projeto.descricao}" placeholder="Descreva aqui o que é seu projeto e o que faz?"/>
 	               
                         <p:outputLabel value="Área do projeto:"/>
                         <p:selectOneMenu value="#{projetoManaged.area}" filter="true">
@@ -38,7 +38,7 @@
 	                		<f:selectItem itemValue="Financeiro" itemLabel="Financeiro"/>
 	                		
 	               </p:selectOneMenu>
-                         <p:outputLabel value="Descricao de necessidade:"/>
+                        <p:outputLabel value="Descricao de necessidade:"/>
                         <p:inputTextarea rows="6" cols="33" value="#{projetoManaged.projeto.motivacaoNecessidade}" placeholder="Descreva o motivo de sua necessidade"/>
 		               
                         <p:commandButton value="Salvar" actionListener="#{projetoManaged.salvarProj}" ajax="false"/>	        

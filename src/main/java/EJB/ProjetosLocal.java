@@ -27,6 +27,8 @@ public interface ProjetosLocal {
     
     Projetos findByName(String name);
     
+    List<Projetos> findBySimilarName(String name);
+    
     List<Usuario> findParticipantes(Object idProjeto);
     
    

@@ -7,6 +7,7 @@ package EJB;
 
 import Entidades.Log;
 import java.util.List;
+import javax.annotation.security.DeclareRoles;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,6 +16,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author adoniran
  */
+@DeclareRoles({"Administrador"})
 @Stateless
 public class LogBean extends Crud<Log> implements LogLocal {
 

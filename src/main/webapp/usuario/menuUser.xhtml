@@ -8,18 +8,17 @@
 		<h:form>
 			<p:panelMenu style="width:250px">
 				<p:submenu label="MENU USUARIO ">
-                                    <p:menuitem value="Painel de Usuario" icon="icon-users" url="usuario.xhtml" />
-<!--                                    <p:menuitem value="Logout" icon="icon-user" url=""/>-->
-                                    
+                                    <p:menuitem value="Painel" icon="icon-user" url="usuario.xhtml"/>
 				</p:submenu>
 				
-				
+				<p:submenu label="Menu de projetos">
 					<p:menuitem value="Cadastrar Projeto" url="cadastrarProjeto.xhtml" icon="icon-users" />
-					<p:menuitem value="Editar Projeto" icon="icon-user" />
-				
+                                        <p:menuitem value="Editar Projeto" url="editap.xhtml" icon="icon-user" />
+					<p:menuitem value="Procurar Projeto" url="procura.xhtml" icon="icon-user" />
+					<p:menuitem value="Levantar recursos" icon="icon-user" />
+				</p:submenu>
 				
 			</p:panelMenu>	
-                    
 		</h:form>
 
 </ui:composition>
